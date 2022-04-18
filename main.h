@@ -15,6 +15,7 @@ int (*get_specifier(char *s))(va_list ap);
 int _printf(const char *format, ...);
 int print_string(va_list ap);
 int _puts(char *str);
+int print_from_to(char *start, char *stop, char *except);
 
 #endif
 

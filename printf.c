@@ -24,6 +24,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	char *p;
+	char *start;
 	int count = 0;
 	va_start(args, format);
 
@@ -39,8 +40,21 @@ int _printf(const char *format, ...)
 
 	for (p = (char *)format; *p; p++)
 	{
+		if (*p != '%')
+		{
+			count += _putchar(*p);
+			continue;
+		}
+		start = p;
 		++p;
-		count = get_print_func(p, args);
+		if (!get_specifier(p))
+		{
+			count += print_from_to(start, p, 0);
+		}
+		else 
+		{
+			count += get_print_func(p, args);
+		}
 
 	}
 	va_end(args);
@@ -145,6 +159,27 @@ int print_string(va_list ap)
 	char *str = va_arg(ap, char *);
 	unsigned int sum = 0;
 	sum += _puts(str);
+	return (sum);
+}
+
+/**
+ * print_from_to - prints range of char addresses
+ * @start: starting address
+ * @stop: stopping address
+ * @except: except address
+ *
+ * Return: number bytes printed
+ */
+int print_from_to(char *start, char *stop, char *except)
+{
+	int sum = 0;
+
+	while (start <= stop)
+	{
+		if (start != except)
+			sum += _putchar(*start);
+		start++;
+	}
 	return (sum);
 }
 
