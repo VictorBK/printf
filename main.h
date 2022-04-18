@@ -5,11 +5,17 @@
 #include <stdarg.h>
 #include <unistd.h>
 
+/**
+ * struct specifier - struct token
+ *
+ * @specifier: format token
+ * @f: the function associated
+ */
 typedef struct specifier
 {
 	char *specifier;
 	int (*f)(va_list);
-}specifier_t;
+} specifier_t;
 
 int _putchar(char c);
 int print_percent(va_list ap);
