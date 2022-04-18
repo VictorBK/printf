@@ -1,6 +1,9 @@
 #ifndef main_h
 #define main_h
 #include <stdarg.h>
+#include <stdio.h>
+#include <stdarg.h>
+#include <unistd.h>
 
 typedef struct specifier
 {
@@ -16,6 +19,7 @@ int _printf(const char *format, ...);
 int print_string(va_list ap);
 int _puts(char *str);
 int print_from_to(char *start, char *stop, char *except);
+int print_char(va_list ap);
 
 #endif
 
