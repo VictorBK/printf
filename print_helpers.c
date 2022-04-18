@@ -27,7 +27,7 @@ int print_percent(va_list ap)
  * print_char - prints character
  * @ap: argument pointer
  *
- * Retun: number chars printed
+ * Return: number chars printed
  */
 int print_char(va_list ap)
 {
