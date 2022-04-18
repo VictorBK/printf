@@ -27,3 +27,4 @@ int (*get_specifier(char *s))(va_list ap)
 
 	return (NULL);
 }
+

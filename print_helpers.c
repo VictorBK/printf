@@ -8,7 +8,7 @@
  */
 int _putchar(char c)
 {
-	return(write(1, &c, 1));
+	return (write(1, &c, 1));
 }
 
 /**
@@ -32,6 +32,8 @@ int print_percent(va_list ap)
 int print_char(va_list ap)
 {
 	unsigned int sum = 0, ch = va_arg(ap, int);
+
 	sum += _putchar(ch);
+
 	return (sum);
 }
