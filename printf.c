@@ -51,7 +51,7 @@ int _printf(const char *format, ...)
 		{
 			count += print_from_to(start, p, 0);
 		}
-		else 
+		else
 		{
 			count += get_print_func(p, args);
 		}
