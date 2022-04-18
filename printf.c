@@ -1,18 +1,4 @@
-#include <stdio.h>
-#include <stdarg.h>
-#include <unistd.h>
 #include "main.h"
-
-/**
- * _putchar - writes the character c to stdout
- * @c: The character to print
- *
- * Return: On success 1.
- */
-int _putchar(char c)
-{
-	return(write(1, &c, 1));
-}
 
 /**
  * _printf - produces output according to a format
@@ -26,6 +12,7 @@ int _printf(const char *format, ...)
 	char *p;
 	char *start;
 	int count = 0;
+
 	va_start(args, format);
 
 
@@ -58,60 +45,7 @@ int _printf(const char *format, ...)
 
 	}
 	va_end(args);
-	return count;
-}
-
-/**
- * print_percent - prints string
- * @ap: argument pointer
- *
- * Return: number chars printed
- */
-int print_percent(va_list ap)
-{
-	(void)ap;
-	return (_putchar('%'));
-}
-
-/**
- * print_char - prints character
- * @ap: argument pointer
- *
- * Retun: number chars printed
- */
-int print_char(va_list ap)
-{
-	unsigned int sum = 0, ch = va_arg(ap, int);
-	sum += _putchar(ch);
-	return (sum);
-}
-
-/**
- * get_specifier - fints the format function
- * @s: the format string
- *
- * Return: the number of bytes printed
- */
-int (*get_specifier(char *s))(va_list ap)
-{
-	specifier_t specifiers[] = {
-		{"%", print_percent},
-		{"c", print_char},
-		{"s", print_string},
-		{NULL, NULL}
-	};
-	int i = 0;
-
-	while (specifiers[i].specifier)
-	{
-		if (*s == specifiers[i].specifier[0])
-		{
-			return (specifiers[i].f);
-		}
-		i++;
-	}
-
-	return (NULL);
+	return (count);
 }
 
 /**
@@ -124,6 +58,7 @@ int (*get_specifier(char *s))(va_list ap)
 int get_print_func(char *s, va_list ap)
 {
 	int (*f)(va_list) = get_specifier(s);
+
 	if (f)
 	{
 		return (f(ap));
@@ -158,6 +93,7 @@ int print_string(va_list ap)
 {
 	char *str = va_arg(ap, char *);
 	unsigned int sum = 0;
+
 	sum += _puts(str);
 	return (sum);
 }
