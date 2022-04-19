@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * print_str_rev - print string everything that is not %
@@ -13,7 +13,7 @@ int print_str_rev(va_list list)
 	aux = va_arg(list, char*);
 	if (!aux)
 		return (0);
-	_print_rev_recursion(aux);
+	print_str_rev(aux);
 	return (_strlen(aux));
 }
 
