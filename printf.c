@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 }
 
 /**
- * get_print_func - finds the format func
+ * get_print_func - finds the format function
  * @s: the format string
  * @ap: argument pointer
  *
@@ -99,7 +99,7 @@ int print_string(va_list ap)
 }
 
 /**
- * print_from_to - prints range of char addresses
+ * print_from_to - prints range of addresses
  * @start: starting address
  * @stop: stopping address
  * @except: except address
@@ -118,4 +118,3 @@ int print_from_to(char *start, char *stop, char *except)
 	}
 	return (sum);
 }
-

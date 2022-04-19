@@ -1,7 +1,11 @@
 #include "main.h"
 
 /**
+<<<<<<< HEAD
  * get_specifier - finds the function of the format
+=======
+ * get_specifier - prints the format function
+>>>>>>> 7b4d6876fd20911d099c98c934ff07f5fa45e864
  * @s: the format string
  *
  * Return: the number of bytes printed
