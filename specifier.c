@@ -2,7 +2,6 @@
 
 /**
  * get_specifier - finds the format function
- * get_specifier - prints the format function
  * @s: the format string
  *
  * Return: the number of bytes printed
